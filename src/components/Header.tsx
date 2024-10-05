@@ -1,5 +1,5 @@
 
-import { menuItems, type MenuItem } from "../data/menuItems";
+import { menuItems } from "../data/menuItems";
 import {easeInOut, motion} from "framer-motion"
 import { Button } from "./Button";
 
