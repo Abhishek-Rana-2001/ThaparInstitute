@@ -4,7 +4,7 @@ type Props = {
     children: React.ReactNode;
 }
 
-export const AnimatedHeading = ({children} : Props) => {
+const AnimatedHeading = ({children} : Props) => {
   return (
     <motion.h1
       variants={{
@@ -23,3 +23,5 @@ export const AnimatedHeading = ({children} : Props) => {
     </motion.h1>
   );
 };
+
+export default AnimatedHeading

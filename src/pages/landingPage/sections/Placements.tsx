@@ -1,5 +1,5 @@
-import { AnimatedHeading } from "../../components/AnimatedHeading"
-import { Container } from "../../components/Container"
+import  AnimatedHeading  from "../../../components/AnimatedHeading"
+import  Container  from "../../../components/Container"
 
 const Placements = () => {
   return (

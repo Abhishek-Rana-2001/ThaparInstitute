@@ -3,10 +3,10 @@ import { twMerge } from "tailwind-merge";
 interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   size: "small" | "medium" | "large";
-  variant : "primary" | "secondary"
+  variant : "primary" | "secondary";
 }
 
-export const Button = ({ children, size ,variant , ...props }: ButtonProps) => {
+ const Button = ({ children, size ,variant, className , ...props }: ButtonProps) => {
   const sizeClasses = {
     small: "text-base px-4 py-2",
     medium: "text-xl px-5 py-2",
@@ -21,8 +21,10 @@ export const Button = ({ children, size ,variant , ...props }: ButtonProps) => {
   };
 
   return (
-    <button {...props} className={twMerge("", sizeClasses[size], ColorVariants[variant])}>
+    <button {...props} className={twMerge("", sizeClasses[size], ColorVariants[variant], className)}>
       <span className="mix-blend-difference">{children}</span>
     </button>
   );
 };
+
+export default Button
