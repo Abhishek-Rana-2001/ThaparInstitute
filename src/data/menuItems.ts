@@ -1,42 +1,46 @@
 export type MenuItem = {
-    title : string,
+    title: string,
+    link?:string,
     submenu?: MenuItem[]
-} 
+}
 
 
-export const menuItems : MenuItem[] = [
+export const menuItems: MenuItem[] = [
     {
-        title : "Courses",
-        submenu : [
+        title: 'Home',
+        link:"/"
+    },
+    {
+        title: "Courses",
+        link:"/courses",
+        submenu: [
             {
-                title :"Computer Science",
+                title: "Computer Science",
                 submenu: [
                     {
-                        title : "Full Stack Java"
+                        title: "Full Stack Java"
                     },
                     {
-                        title : "Full Stack .NET"
+                        title: "Full Stack .NET"
                     },
                     {
-                        title : "Full Stack PHP"
+                        title: "Full Stack PHP"
                     },
                 ]
             },
             {
-                title :"Web technologies"
+                title: "Web technologies"
             },
             {
-                title :"Diploma Courses"
+                title: "Diploma Courses"
             },
             {
-                title :"School Courses"
+                title: "School Courses"
             },
         ]
     },
     {
-        title:"Certifications"
+        title: "Certifications",
+        link: "/certifications"
     },
-    {
-        title : "Company",
-    }
 ]
