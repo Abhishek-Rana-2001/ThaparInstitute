@@ -1,6 +1,7 @@
-import Placements from "../placements/Placements";
+import Placements from "./sections/Placements";
 import { Hero } from "./sections/Hero";
 import { Provide } from "./sections/Provide";
+import { Testimonials } from "./sections/Testimonials";
 
 export const LandingPage = () => {
 
@@ -10,9 +11,10 @@ export const LandingPage = () => {
       <Hero />
       {/* What we provide section */}
       <Provide/>
+      {/* Testimonials */}
+      <Testimonials/>
       {/* Placements */}
       <Placements/>
-      {/* Testimonials */}
     </div>
   );
 };

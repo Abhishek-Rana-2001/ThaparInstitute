@@ -1,5 +1,5 @@
-import { Button } from "../../../components/Button";
-import { Container } from "../../../components/Container";
+import Button from "../../../components/Button";
+import  Container  from "../../../components/Container";
 import { courses } from "../../../data/courses";
 import { easeInOut, motion } from "framer-motion";
 
@@ -35,7 +35,7 @@ export const Provide = () => {
       >
         {/* Choose From The Courses We provide */}
         <span className={`relative z-10 px-4 py-4 w-full `}>
-          Choose From The Courses We provide
+          Choose From Job Ready Courses
         </span>
       </motion.h1>
       <div
