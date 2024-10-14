@@ -14,7 +14,7 @@ const SideBar = ({}) => {
         initial={{ y: "-100%", opacity:0 }}
         animate={{ y: navOpen ? "0%" : "-100%" , opacity: navOpen ? 1 : 0 }}
         transition={{ duration: 0.5, ease: easeInOut }}
-        className="fixed right-0 top-0 h-screen w-full  content-center space-y-8 bg-[#333] text-white md:hidden"
+        className="fixed right-0 top-0 z-40 h-screen w-full  content-center space-y-8 bg-[#333] text-white md:hidden"
       >
         <Links navOpen={navOpen} setNavOpen={setNavOpen}/>
       </motion.div>
