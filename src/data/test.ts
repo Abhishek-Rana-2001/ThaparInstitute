@@ -43,7 +43,7 @@ const courses = [
 
 
  export const fetchCourses = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       // Simulating a delay of 2 seconds (2000 milliseconds)
       setTimeout(() => {
         // Resolve the promise with the mock courses data
