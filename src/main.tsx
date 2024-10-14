@@ -4,8 +4,10 @@ import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { LandingPage } from "./pages/landingPage/LandingPage.tsx";
-import { Courses } from "./pages/courses/Courses.tsx";
+import { courseLoader, Courses } from "./pages/courses/Courses.tsx";
 import { Certifications } from "./pages/certifications/Certifications.tsx";
+import ReactLenis from "lenis/react";
+import { Login } from "./pages/authentication/Login.tsx";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +20,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/courses",
-        element:<Courses/>
+        element:<Courses/>,
+        loader:courseLoader
       },
       {
         path: "/certifications",
@@ -26,10 +29,18 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:"/login",
+    element:<Login/>
+  }
 ]);
+
+
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <ReactLenis root>
     <RouterProvider router={router} />
+    </ReactLenis>
   </StrictMode>
 );

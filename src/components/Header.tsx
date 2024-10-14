@@ -2,11 +2,17 @@
 import { menuItems } from "../data/menuItems";
 import {easeInOut, motion} from "framer-motion"
 import Button from "./Button";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
 
  const Header = () => {
   const location = useLocation()
+  const navigate = useNavigate()
+
+  const handleClick = ()=>{
+       navigate("/login")
+  }
+  
   return (
     <div className="sticky top-0 bg-[#111] z-10">
        <div className="px-10 flex justify-between w-full items-center">
@@ -21,7 +27,7 @@ import SideBar from "./SideBar";
             );
           })}
         </ul>
-        <Button size="small" variant="primary" className="md:block hidden">Login</Button>
+        <Button size="small" variant="primary" className="md:block hidden" onClick={handleClick}>Login</Button>
         </motion.div>
         <SideBar/>
        </div>

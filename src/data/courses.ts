@@ -1,4 +1,10 @@
-export const courses = [
+export type Course = {
+    title:string,
+    description:string;
+    img:string
+}
+
+export const courses:Course[] = [
     {
         title: "Digital Marketing",
         description: "Learn the fundamentals of digital marketing, including SEO, social media, email marketing",
