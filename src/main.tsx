@@ -8,6 +8,8 @@ import { courseLoader, Courses } from "./pages/courses/Courses.tsx";
 import { Certifications } from "./pages/certifications/Certifications.tsx";
 import ReactLenis from "lenis/react";
 import { Login } from "./pages/authentication/Login.tsx";
+import { AuthProvider } from "./context/AuthContext.tsx";
+import { ProtectedRoute } from "./components/ProtectedRoute.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/certifications",
-        element:<Certifications/>
+        element:<ProtectedRoute><Certifications/></ProtectedRoute>
       },
     ],
   },
@@ -40,7 +42,9 @@ const router = createBrowserRouter([
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ReactLenis root>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
     </ReactLenis>
   </StrictMode>
 );

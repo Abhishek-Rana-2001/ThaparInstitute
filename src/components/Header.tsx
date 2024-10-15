@@ -4,6 +4,9 @@ import {easeInOut, motion} from "framer-motion"
 import Button from "./Button";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
+import { useAuth } from "../context/AuthContext";
+import { FaRegUser } from "react-icons/fa";
+import { CiPower } from "react-icons/ci";
 
  const Header = () => {
   const location = useLocation()
@@ -12,6 +15,8 @@ import SideBar from "./SideBar";
   const handleClick = ()=>{
        navigate("/login")
   }
+
+  const {user, setUser} = useAuth()
   
   return (
     <div className="sticky top-0 bg-[#111] z-10">
@@ -27,7 +32,8 @@ import SideBar from "./SideBar";
             );
           })}
         </ul>
-        <Button size="small" variant="primary" className="md:block hidden" onClick={handleClick}>Login</Button>
+       {user === null ?  <Button size="small" variant="primary" className="md:block hidden" onClick={handleClick}>Login</Button> : <div className="flex gap-2 items-center"><FaRegUser />{user.username} <CiPower onClick={()=>setUser(null)} className="cursor-pointer" /></div> }
+
         </motion.div>
         <SideBar/>
        </div>
