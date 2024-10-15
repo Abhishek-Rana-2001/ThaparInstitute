@@ -4,7 +4,7 @@ type Props = {
     children: React.ReactNode;
 }
 
-export const AnimatedHeading = ({children} : Props) => {
+const AnimatedHeading = ({children} : Props) => {
   return (
     <motion.h1
       variants={{
@@ -15,11 +15,13 @@ export const AnimatedHeading = ({children} : Props) => {
       whileInView="animate"
       transition={{ duration: 0.6, ease: easeInOut }}
       viewport={{ once: true, amount: 0.5 }}
-      className="text-center md:text-5xl text-2xl z-20 font-medium mx-auto  px-5 corner-border"
+      className="text-center md:text-5xl text-2xl  font-medium mx-auto  px-5 corner-border"
     >
-      <span className="relative z-10 px-4 py-4 w-full">
+      <span className="px-4 py-4 w-full">
         {children}
       </span>
     </motion.h1>
   );
 };
+
+export default AnimatedHeading

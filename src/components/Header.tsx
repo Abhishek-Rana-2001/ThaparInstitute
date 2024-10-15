@@ -1,17 +1,24 @@
 
 import { menuItems } from "../data/menuItems";
 import {easeInOut, motion} from "framer-motion"
-import { Button } from "./Button";
-import { NavLink, useLocation } from "react-router-dom";
+import Button from "./Button";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import SideBar from "./SideBar";
 
-export const Header = () => {
+ const Header = () => {
   const location = useLocation()
+  const navigate = useNavigate()
+
+  const handleClick = ()=>{
+       navigate("/login")
+  }
+  
   return (
     <div className="sticky top-0 bg-[#111] z-10">
-       <div className="px-10">
-       <motion.div initial={{opacity:0, x:20}} animate={{opacity:1, x:0}} transition={{duration:0.5, ease:easeInOut, delay:0.25}} className="flex justify-between items-center py-4">
+       <div className="px-10 flex justify-between w-full items-center">
+       <motion.div initial={{opacity:0, x:20}} animate={{opacity:1, x:0}} transition={{duration:0.5, ease:easeInOut, delay:0.25}} className="flex justify-between items-center py-4 w-full">
         <h1 className="text-4xl font-bold "><NavLink to={"/"}>TI</NavLink></h1>
-        <ul className="flex gap-5 md:flex-row md:opacity-1">
+        <ul className="md:flex gap-5 md:flex-row md:opacity-1 hidden ">
           {menuItems.map((menuItem, index) => {
             return (
               <li className="text-white/65" key={index}>
@@ -20,10 +27,13 @@ export const Header = () => {
             );
           })}
         </ul>
-        <Button size="small" variant="primary">Login</Button>
+        <Button size="small" variant="primary" className="md:block hidden" onClick={handleClick}>Login</Button>
         </motion.div>
+        <SideBar/>
        </div>
     </div>
   );
 };
+
+export default Header
 
