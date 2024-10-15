@@ -35,7 +35,7 @@ export const Courses = () => {
                     {data.data.map((course: Course, index: number) => (
                       <motion.div variants={fadeUpVariants} initial="hidden" animate="visible" transition={{duration:0.3, ease:easeInOut, delay:0.2*index}} key={index} className="flex flex-col w-96 shrink-0">
                         <h3 className="text-2xl">{course.name}</h3>
-                        <p>{course.description}</p>
+                        <p className="text-white/70">{course.description}</p>
                       </motion.div>
                     ))}
                   </>
