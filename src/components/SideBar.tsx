@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { easeInOut, motion, MotionConfig } from "framer-motion";
 import { menuItems } from "../data/menuItems";
+import Button from "./Button";
 
 const SideBar = ({}) => {
   const [navOpen, setNavOpen] = useState(false);
+  const navigate = useNavigate()
 
 
   return (
@@ -17,6 +19,7 @@ const SideBar = ({}) => {
         className="fixed right-0 top-0 z-40 h-screen w-full  content-center space-y-8 bg-[#333] text-white md:hidden"
       >
         <Links navOpen={navOpen} setNavOpen={setNavOpen}/>
+        <div className="flex justify-center"><Button size="small" variant="primary" onClick={()=>{navigate("/login")}}>Login</Button></div>
       </motion.div>
     </>
   );
