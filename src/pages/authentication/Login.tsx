@@ -27,7 +27,7 @@ export const Login = () => {
   });
   const [showPassword, setShowPassword] = useState(false);
 
-  const { user, setUser } = useAuth();
+  const {setUser } = useAuth();
 
   const handleLogin: SubmitHandler<FormFields> = async (data) => {
     if (data) {
