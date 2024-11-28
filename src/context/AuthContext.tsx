@@ -8,7 +8,7 @@ export interface User {
 
 export interface AuthContextValue {
     user: User | null;
-    setUser: (user: User | null) => void;
+    setUser: React.Dispatch<React.SetStateAction<User | null>>;
   }
 
 export const AuthContext = createContext<AuthContextValue | undefined>(undefined)
@@ -16,10 +16,23 @@ export const AuthContext = createContext<AuthContextValue | undefined>(undefined
 type AuthProviderProps = PropsWithChildren
 
 
+const isValidUser = (data: any): data is User => {
+    return (
+        typeof data === "object" &&
+        data !== null &&
+        typeof data.username === "string" &&
+        (data.role === "admin" || data.role === "user") &&
+        typeof data.id === "string"
+    );
+};
+
 
 export const AuthProvider = ({children} : AuthProviderProps)=>{
 
-    const [user, setUser] = useState<User | null>(null)
+    const storedUser = sessionStorage.getItem("user");
+    const initialUser = storedUser ? JSON.parse(storedUser) : null;
+
+    const [user, setUser] = useState<User | null>(isValidUser(initialUser) ? initialUser : null);
 
    return <AuthContext.Provider value={{user, setUser}}>
     {children}

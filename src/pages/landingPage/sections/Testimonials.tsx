@@ -9,9 +9,9 @@ export const Testimonials = () => {
     <Container>
       <div className="">
         <AnimatedHeading>Our Students Say About Us</AnimatedHeading>
-        <div className="mt-20">
+        <div className="mt-20 p-4 shadow-xl">
           <FadeUp>
-            <Carousel items={testimonials} />
+            <Carousel items={testimonials} delay={10} />
           </FadeUp>
         </div>
       </div>

@@ -7,6 +7,6 @@ export const ProtectedRoute = ({children} : PropsWithChildren)=>{
      const {user} = useAuth()
 
     return (
-     user === null ? <Navigate to={"/login"} replace={true}></Navigate> : children
+      user === null ? <Navigate to={"/login"} replace={true}></Navigate> : user?.role !== "admin" ? <Navigate to={"/login"} replace={true}></Navigate> : children
     )
 }
