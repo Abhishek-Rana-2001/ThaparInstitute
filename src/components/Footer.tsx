@@ -1,5 +1,4 @@
 import { FaLocationDot } from "react-icons/fa6";
-import Container from "./Container";
 import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
