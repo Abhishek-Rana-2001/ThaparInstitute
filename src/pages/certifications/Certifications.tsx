@@ -4,7 +4,6 @@ import Button from "../../components/Button";
 import Container from "../../components/Container";
 import { useState } from "react";
 import { BASE_URL } from "../../utils/url";
-import { span } from "framer-motion/client";
 
 const Certifications = () => {
   const [studentID, setStudentID] = useState("");
