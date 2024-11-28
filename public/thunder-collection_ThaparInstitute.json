@@ -1,0 +1,97 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "ThaparInstitute",
+    "collectionId": "e86cf1fa-e28c-4522-a4ce-7fcadab5d065",
+    "dateExported": "2024-10-20T14:10:40.718Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "2b87a315-ed1d-4a4a-b06c-8abcf716ea94",
+            "colId": "e86cf1fa-e28c-4522-a4ce-7fcadab5d065",
+            "containerId": "",
+            "name": "SignUp",
+            "url": "http://localhost:8000/auth/signup",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-10-12T18:46:36.003Z",
+            "modified": "2024-10-15T11:06:58.519Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"Abhishek\",\n  \"email\": \"abhi@gmail.com\",\n  \"password\": \"123\",\n  \"role\":\"admin\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "047c5b64-08a4-432a-8947-b7e86482c0c8",
+            "colId": "e86cf1fa-e28c-4522-a4ce-7fcadab5d065",
+            "containerId": "",
+            "name": "Login",
+            "url": "https://thapar-institute-backend.vercel.app/auth/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-10-13T10:34:53.861Z",
+            "modified": "2024-10-13T16:23:27.795Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"abhi@12345.com\",\n  \"password\": \"123\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "eeb32b37-f0dc-4efe-b67c-53106cd25a87",
+            "colId": "e86cf1fa-e28c-4522-a4ce-7fcadab5d065",
+            "containerId": "",
+            "name": "create Course",
+            "url": "http://localhost:8000/course",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-10-14T16:17:30.021Z",
+            "modified": "2024-10-14T16:19:03.782Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Full Stack Development\",\n  \"description\": \"Unlock your potential as a versatile web developer with our comprehensive Full Stack Development course. This program is designed to equip you with the skills needed to build modern, dynamic web applications from scratch, both on the front end and back end.\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "3c89660c-8d46-4d31-90dc-1d0c124ebcc1",
+            "colId": "e86cf1fa-e28c-4522-a4ce-7fcadab5d065",
+            "containerId": "",
+            "name": "get Courses",
+            "url": "https://thapar-institute-backend.vercel.app/course",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-10-14T16:41:04.999Z",
+            "modified": "2024-10-14T16:44:42.591Z",
+            "headers": []
+        },
+        {
+            "_id": "c5e2df58-3c06-41c7-9cb9-f4e46e019154",
+            "colId": "e86cf1fa-e28c-4522-a4ce-7fcadab5d065",
+            "containerId": "",
+            "name": "upload",
+            "url": "http://localhost:8000/upload",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2024-10-20T14:06:34.940Z",
+            "modified": "2024-10-20T14:07:41.344Z",
+            "headers": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [],
+                "files": [
+                    {
+                        "name": "certificate",
+                        "value": "d:\\Projects\\samyak\\ThaparInstitute\\public\\HeroImage.png"
+                    }
+                ]
+            }
+        }
+    ],
+    "ref": "vQrP9-SrY6qaaxfVKZs8xOZYm74d89y6nINalZEBdw-aSzwlR6XcCt2MRuTFtWjlDTdhpbJKPD2Bn4Vsh2oDMQ"
+}

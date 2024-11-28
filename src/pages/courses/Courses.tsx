@@ -15,7 +15,7 @@ interface Course {
 interface CoursesData {
   data: Course[];
 }
-export const Courses = () => {
+ const Courses = () => {
   const data = useLoaderData() as { courses: CoursesData };
 
   return (
@@ -49,6 +49,8 @@ export const Courses = () => {
     </div>
   );
 };
+
+export default Courses
 
 export const courseLoader = async () => {
   const response = fetchCourses();

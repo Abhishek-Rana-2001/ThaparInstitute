@@ -1,1 +1,1 @@
-export const BASE_URL = import.meta.env.VITE_BASE_URL
+export const BASE_URL = import.meta.env.VITE_NODE_ENV !== "production" ? import.meta.env.VITE_BASE_URL_DEVELOPMENT : import.meta.env.VITE_BASE_URL

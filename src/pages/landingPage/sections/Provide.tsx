@@ -20,7 +20,7 @@ export const Provide = () => {
         {courses.map((course, idx) => {
           return (
             <FadeUp key={idx} delay={idx * 0.2}>
-              <CourseCard title={course.title}  img={course.img} description={course.description} />
+              <CourseCard name={course.name}  img={course.img} description={course.description} _id={course._id}/>
             </FadeUp>
           );
         })}

@@ -1,28 +1,33 @@
 export type Course = {
-    title:string,
+    name:string,
     description:string;
-    img:string
+    _id:string;
+    img:string;
 }
 
 export const courses:Course[] = [
     {
-        title: "Digital Marketing",
+        name: "Digital Marketing",
         description: "Learn the fundamentals of digital marketing, including SEO, social media, email marketing",
-        img: "/DigitalMarketing.jpg"
+        img: "/DigitalMarketing.jpg",
+        _id:"1"
     },
     {
-        title: "Data Science",
+        name: "Data Science",
         description: "Learn the fundamentals of data science, including data visualization, machine learning, and statistical",
-        img: "/DataScience.jpg"
+        img: "/DataScience.jpg",
+        _id:"2"
     },
     {
-        title: "Artificial Intelligence",
+        name: "Artificial Intelligence",
         description: "Learn the fundamentals of artificial intelligence, including natural language processing, computer vision, and robotics",
-        img: "/AI.jpg"
+        img: "/AI.jpg",
+        _id:"3"
     },
     {
-        title: "Cyber Security",
+        name: "Cyber Security",
         description: "Learn the fundamentals of cyber security, including threat analysis, risk management, and incident",
-        img: "/DigitalMarketing.jpg"
+        img: "/DigitalMarketing.jpg",
+        _id:"4"
     }
 ]

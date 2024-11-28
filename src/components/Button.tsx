@@ -22,8 +22,8 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   };
 
   return (
-    <button {...props} type={type} className={twMerge("", sizeClasses[size], ColorVariants[variant], className)}>
-      <span className="mix-blend-difference">{children}</span>
+    <button  {...props} type={type} className={twMerge("", sizeClasses[size], ColorVariants[variant], className)}>
+      <span className="mix-blend-difference flex gap-1 items-center justify-center">{children}</span>
     </button>
   );
 };
