@@ -72,7 +72,7 @@ const router = createBrowserRouter([
 
 
 createRoot(document.getElementById("root")!).render(
-  // <StrictMode>
+  <StrictMode>
     <ReactLenis root>
     <AuthProvider>
       <AdminContextProvider>
@@ -80,5 +80,5 @@ createRoot(document.getElementById("root")!).render(
       </AdminContextProvider>
     </AuthProvider>
     </ReactLenis>
-  // </StrictMode>
+  </StrictMode>
 );
