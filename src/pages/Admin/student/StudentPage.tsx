@@ -5,6 +5,7 @@ import { useAdminContext } from "../../../context/AdminContext";
 import UploadButton from "../../../components/UploadButton";
 import axios from "axios";
 import { BASE_URL } from "../../../utils/url";
+import { MdClose } from "react-icons/md";
 
 type studentCourse = {
   _id: string;
@@ -67,6 +68,12 @@ const StudentPage = () => {
       }).catch(err=>console.log(err))
     }
   };
+
+  const handleDeleteCertificate = ()=>{
+    
+  }
+
+
   return (
     <div className="p-5 space-y-5">
       <h1 className="text-4xl font-bold">{student?.name}</h1>
@@ -99,7 +106,7 @@ const StudentPage = () => {
                   {matchedCourse ? matchedCourse.name : "Course not found"}
                 </td>
                 <td className="p-4">
-                  {course.certificateUrl ? <a className="hover:text-sky-500 transition-colors duration-150 ease-in-out underline " href={course.certificateUrl}>Download Certificate</a>  : <UploadButton
+                  {course.certificateUrl ? <span className="flex items-center gap-2"><a className="hover:text-sky-500 transition-colors duration-150 ease-in-out underline " href={course.certificateUrl}>Download Certificate</a><MdClose onClick={handleDeleteCertificate}/> </span> : <UploadButton
                     courseId={course._id}
                     uploadCertificate={uploadCertificate}
                     file={file}

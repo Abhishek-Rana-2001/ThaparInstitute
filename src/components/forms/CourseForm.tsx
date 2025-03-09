@@ -58,7 +58,7 @@ const CourseForm = () => {
     <div>
       <form
         onSubmit={handleSubmit(handleCreateCourse)}
-        className="flex flex-col gap-5"
+        className="flex flex-col gap-5 max-w-[600px]"
       >
         <div>
           <label>
@@ -76,11 +76,10 @@ const CourseForm = () => {
 
         <div>
           <label>
-            <input
+            <textarea
               {...register("description")}
-              type="text"
               placeholder="Description"
-              className="p-2 rounded-xl text-black w-full"
+              className="p-2 rounded-xl text-black w-full h-32"
             />
           </label>
         </div>

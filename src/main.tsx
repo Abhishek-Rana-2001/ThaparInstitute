@@ -15,6 +15,7 @@ import Student from "./pages/Admin//student/Student.tsx";
 import Course from "./pages/Admin/Course.tsx";
 import StudentPage from "./pages/Admin/student/StudentPage.tsx";
 import { AdminContextProvider } from "./context/AdminContext.tsx";
+import Contact from "./pages/contact/Contact.tsx";
 
 const Courses = lazy(() => import("./pages/courses/Courses.tsx"));
 
@@ -55,19 +56,23 @@ const router = createBrowserRouter([
             element:<Course/>
           }
         ]
+      },
+      {
+        path:"/contact",
+        element:<Contact/>
       }
     ],
   },
   {
     path:"/login",
     element:<Login/>
-  }
+  },
 ]);
 
 
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
+  // <StrictMode>
     <ReactLenis root>
     <AuthProvider>
       <AdminContextProvider>
@@ -75,5 +80,5 @@ createRoot(document.getElementById("root")!).render(
       </AdminContextProvider>
     </AuthProvider>
     </ReactLenis>
-  </StrictMode>
+  // </StrictMode>
 );
