@@ -6,8 +6,6 @@ import SideBar from "./SideBar";
 import { useAuth } from "../context/AuthContext";
 import { FaRegUser } from "react-icons/fa";
 import { CiPower } from "react-icons/ci";
-// import Avatar from "./Avatar";
-// import DropDownMenu from "./DropDownMenu";
 
 const Header = () => {
   const location = useLocation();

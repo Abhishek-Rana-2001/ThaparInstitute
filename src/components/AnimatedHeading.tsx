@@ -1,10 +1,13 @@
 import { easeInOut, motion } from "framer-motion";
+import { cn } from "../utils/utils";
 
 type Props = {
     children: React.ReactNode;
+    className?:string,
+    spanClass?:string
 }
 
-const AnimatedHeading = ({children} : Props) => {
+const AnimatedHeading = ({children,className,spanClass} : Props) => {
   return (
     <motion.h1
       variants={{
@@ -15,9 +18,9 @@ const AnimatedHeading = ({children} : Props) => {
       whileInView="animate"
       transition={{ duration: 0.6, ease: easeInOut }}
       viewport={{ once: true, amount: 0.5 }}
-      className="text-center md:text-5xl text-2xl  font-medium mx-auto  px-5 corner-border"
+      className={cn("text-center md:text-5xl text-2xl  font-medium mx-auto  px-5 corner-border",className)}
     >
-      <span className="px-4 py-4 w-full">
+      <span className={cn("px-4 py-4 w-full",spanClass)}>
         {children}
       </span>
     </motion.h1>

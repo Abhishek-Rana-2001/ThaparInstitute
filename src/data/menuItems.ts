@@ -43,4 +43,8 @@ export const menuItems: MenuItem[] = [
         title: "Certifications",
         link: "/certifications"
     },
+    {
+        title: "Contact Us",
+        link: "/contact"
+    },
 ]
