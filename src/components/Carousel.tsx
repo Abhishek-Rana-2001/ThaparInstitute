@@ -1,12 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { TestimonialType } from "../data/testimonials";
-import {
-  easeInOut,
-  motion,
-  useInView,
-  useMotionValue,
-} from "framer-motion";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { easeInOut, motion, useInView, useMotionValue } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 type CarouselProps = {
   items: TestimonialType[];
@@ -58,7 +53,7 @@ export const Carousel = ({ items, delay = 5 }: CarouselProps) => {
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - 1);
-    }else{
+    } else {
       setCurrentIndex(items.length - 1);
     }
   };
@@ -67,12 +62,12 @@ export const Carousel = ({ items, delay = 5 }: CarouselProps) => {
     <div className="relative">
       <div className="absolute top-[50%] -translate-y-[50%] left-0 z-10">
         <button onClick={handlePrev}>
-          <MdKeyboardArrowRight size={30} className={"rotate-180 "} />
+          <ArrowRight size={30} className={"rotate-180 hover:cursor-pointer"} />
         </button>
       </div>
       <div className="absolute top-[50%] -translate-y-[50%] right-0 z-10">
         <button onClick={handleNext}>
-          <MdKeyboardArrowRight size={30} className=" hover:cursor-pointer" />
+          <ArrowRight size={30} className="hover:cursor-pointer" />
         </button>
       </div>
       <div className="overflow-x-hidden ">

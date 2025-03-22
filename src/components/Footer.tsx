@@ -1,6 +1,5 @@
-import { FaLocationDot } from "react-icons/fa6";
-import { FaFacebookSquare, FaInstagram, FaYoutube} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { MapPin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,13 +9,13 @@ const Footer = () => {
         <h3 className="md:text-2xl">Follow Us On Socials</h3>
         <div className="flex gap-4">
           <a href="">
-            <FaFacebookSquare size={30} />
+          <img src="/icons/facebook.svg" className="w-10 h-10 object-cover" alt="" />
           </a>
           <a href="https://www.instagram.com/samyakludhiana?igsh=MWtjMnFocnNwNGR4dg==" target="_blank">
-            <FaInstagram size={30} />
+          <img src="/icons/instagram.svg" className="w-10 h-10 object-cover" alt="" />
           </a>
           <a href="https://youtube.com/@samyakludhiana?si=1lx3_lxQf1BBl6Xz" target="_blank">
-          <FaYoutube size={30} />
+          <img src="/icons/youtube.svg" className="w-10 h-10 object-cover" alt="" />
           </a>
         </div>
       </div>
@@ -31,7 +30,8 @@ const Footer = () => {
       <div className=" flex flex-col items-center gap-5 justify-center">
         <h3 className="md:text-2xl">Address</h3>
         <div className="flex items-center gap-4">
-          <FaLocationDot size={30} />
+        <MapPin size={25} />
+          {/* <FaLocationDot size={30} /> */}
           <p className="text-lg">
             S-28, basant vihar colony noorwala road, ludhiana
           </p>
