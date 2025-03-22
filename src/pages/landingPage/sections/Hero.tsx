@@ -11,7 +11,7 @@ export const Hero = () => {
         // initial={{ opacity: 0, x: 20 }}
         // animate={{ opacity: 1, x: 0 }}
         // transition={{ duration: 0.8, ease: easeInOut, delay: 0.25 }}
-        className="flex px-5 gap-3 md:py-20 py-6 md:flex-row flex-col"
+        className="flex px-5 gap-3 md:py-28 py-6 md:flex-row flex-col"
       >
         <motion.div
           initial="hidden"

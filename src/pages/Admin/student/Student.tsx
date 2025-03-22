@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BiPlus } from "react-icons/bi";
 import { BASE_URL } from "../../../utils/url";
 import Button from "../../../components/Button";
 import StudentForm from "../../../components/forms/StudentForm";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useAdminContext } from "../../../context/AdminContext";
+import { Plus } from "lucide-react";
 
 type Student = {
   name: string;
@@ -95,7 +95,7 @@ const Student = () => {
             onClick={() => setFormOpen(!formOpen)}
           >
             Create Student
-            <BiPlus />
+            <Plus />
           </Button>
         </div>
           {formOpen && (

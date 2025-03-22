@@ -4,8 +4,7 @@ import Button from "./Button";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import SideBar from "./SideBar";
 import { useAuth } from "../context/AuthContext";
-import { FaRegUser } from "react-icons/fa";
-import { CiPower } from "react-icons/ci";
+import { Power, UserRound } from "lucide-react";
 
 const Header = () => {
   const location = useLocation();
@@ -48,18 +47,20 @@ const Header = () => {
                 </li>
               );
             })}
-            {
-              user  && user?.role === "admin" ? (
-                <li className="text-white/65">
-                  <NavLink to={"/dashboard"} className="hover:text-white transition-colors duration-200 ease-in
-                  -out">
-                    Dashboard
-                  </NavLink>
-                </li>
-              ):<></>
-            }
+            {user && user?.role === "admin" ? (
+              <li className="text-white/65">
+                <NavLink
+                  to={"/dashboard"}
+                  className="hover:text-white transition-colors duration-200 ease-in
+                  -out"
+                >
+                  Dashboard
+                </NavLink>
+              </li>
+            ) : (
+              <></>
+            )}
           </ul>
-
 
           {user === null ? (
             <Button
@@ -72,12 +73,9 @@ const Header = () => {
             </Button>
           ) : (
             <div className="flex gap-2 items-center">
-              <FaRegUser />
+              <UserRound />
               {user.username}{" "}
-              <CiPower
-                onClick={() => setUser(null)}
-                className="cursor-pointer"
-              />
+              <Power onClick={() => setUser(null)} className="cursor-pointer" />
             </div>
           )}
         </motion.div>

@@ -7,8 +7,7 @@ import { BASE_URL } from "../../utils/url";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { LuUndo2 } from "react-icons/lu";
+import { Eye, EyeOff, Undo2 } from "lucide-react";
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
@@ -76,13 +75,13 @@ export const Login = () => {
                 placeholder="Password"
               />
               {!showPassword ? (
-                <FaEye
+               <Eye
                   size={20}
                   onClick={() => setShowPassword(true)}
                   className="hover:cursor-pointer absolute right-3"
                 />
               ) : (
-                <FaEyeSlash
+                <EyeOff
                   size={20}
                   onClick={() => setShowPassword(false)}
                   className="hover:cursor-pointer absolute right-3"
@@ -118,7 +117,7 @@ export const Login = () => {
         <div className="flex justify-center">
           <NavLink to={"/"} className={"flex gap-1 group"}>
             <span className="underline text-xs group-hover:text-blue-500">Return to home</span>
-            <LuUndo2 className="group-hover:text-blue-500"/>
+            <Undo2 className="group-hover:text-blue-500"/>
           </NavLink>
         </div>
       </div>

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import AnimatedHeading from "../../components/AnimatedHeading";
 import { Loader } from "../../components/Loader";
-import { IoIosMail } from "react-icons/io";
 import { FadeUp } from "../../components/FadeUp";
-import { FaPhoneAlt } from "react-icons/fa";
+import { Mail, Phone } from "lucide-react";
 
 const Contact = () => {
   const [isMapLoading, setIsMapLoading] = useState(true);
@@ -21,7 +20,7 @@ const Contact = () => {
               Let us help you build your skills and become job ready{" "}
               </h2>
               <div className="flex gap-2">
-                <span className="flex gap-2 items-center"><FaPhoneAlt size={20}/> Call us at :</span>
+                <span className="flex gap-2 items-center"><Phone size={20}/> Call us at :</span>
                 <a
                   href="tel:+919815849739"
                   className="flex gap-2 items-center text-sky-500 underline"
@@ -30,7 +29,7 @@ const Contact = () => {
                 </a>
               </div>
               <div className="flex gap-2">
-                <span className="flex gap-2 items-center"> <IoIosMail size={25} /> Mail us at :</span>
+                <span className="flex gap-2 items-center"> <Mail size={25} /> Mail us at :</span>
                 <a
                   href="mailto:thaparinstitute02@gmail.com"
                   className="flex gap-2 items-center text-sky-500 underline"
