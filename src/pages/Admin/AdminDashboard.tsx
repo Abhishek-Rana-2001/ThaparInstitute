@@ -10,7 +10,7 @@ const AdminDashboard = () => {
 
   return (
     <Container>
-      <div className="h-screen">
+      <div className="h-full">
         <div className="flex gap-4">
           <Button
             onClick={(e) => {
@@ -33,7 +33,9 @@ const AdminDashboard = () => {
             Courses
           </Button>
         </div>
-        <Outlet />
+        <div className="max-h-[60vh] overflow-hidden">
+          <Outlet />
+        </div>
       </div>
     </Container>
   );
