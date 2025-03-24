@@ -60,31 +60,33 @@ const Student = () => {
 
   return (
     <>
-    <div className="flex gap-4 mt-20">
+    <div className="flex gap-4 mt-20 h-full">
       <div className="">
         <h2 className="text-2xl font-bold mx-auto w-max">Students</h2>
         {students.length > 0 && (
-          <table className="mx-auto ">
-            <thead>
-              <tr className="p-2" >
-                <th className="font-bold pr-3 text-xl py-3">No.</th>
-                <th className="font-bold pr-3 text-xl py-3">Student Name</th>
-                <th className="font-bold pr-3 text-xl py-3">Student ID</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              {students.map((student, index) => {
-                return (
-                  <tr key={index} className="hover:cursor-pointer hover:scale-105 " onClick={()=>{handleStudent(student.studentID)}}>
-                    <td className="py-3">{index + 1}</td>
-                    <td className="py-3">{student.name}</td>
-                    <td className="py-3">{student.studentID}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          <div className="h-[400px] overflow-y-scroll w-max overflow-x-hidden">
+            <table className="mx-auto h-full ">
+              <thead>
+                <tr className="p-2 space-x-8" >
+                  <th className="font-bold pr-3 text-xl py-3">No.</th>
+                  <th className="font-bold pr-3 text-xl py-3">Student Name</th>
+                  <th className="font-bold pr-3 text-xl py-3">Student ID</th>
+            
+                </tr>
+              </thead>
+              <tbody>
+                {students.map((student, index) => {
+                  return (
+                    <tr key={index} className="hover:cursor-pointer hover:scale-105 " onClick={()=>{handleStudent(student.studentID)}}>
+                      <td className="py-3 px-2">{index + 1}</td>
+                      <td className="py-3 px-2">{student.name}</td>
+                      <td className="py-3 px-2">{student.studentID}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
       <div className="flex-1">
@@ -102,8 +104,6 @@ const Student = () => {
             <StudentForm courses={courses} />
           )}
       </div>
-
-
     </div>
       <Outlet/>
      </>
